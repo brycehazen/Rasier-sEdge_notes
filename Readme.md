@@ -1,6 +1,6 @@
 # Notes Import Processing Script:
 
-This repository contains a script for processing notes from an older Excel file format (.xls) and preparing them for re-import into a system. The script reads the data, applies necessary transformations, and outputs a CSV file ready for import. This is used in Raiser's Edge to create a log file on the record of when changes are made on a weekly basis. The Raiser's Edge database this was scripted for used ConsCodes and matching Fund IDs to identify entities. These ensure the constituent is linked via their constituent and gift record and linked to the entity.
+This repository contains a script for processing notes from an older Excel file format (.xls) and preparing them for re-import into a system. The script reads the data, applies necessary transformations, and outputs a CSV file ready for import. This is used in Raiser's Edge to create a log file on the record of when changes are made on a weekly basis. The Raiser's Edge database this was scripted for used ConsCodes and matching Fund IDs to identify entities. These ensure the constituent is linked via their constituent and gift record to the entity(Parish, DAF, ect.).
 
 ## Features:
 
