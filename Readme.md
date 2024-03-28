@@ -38,7 +38,7 @@ This repository contains a script for processing notes from an older Excel file 
 
 1. Place the script `noteSync_changeLog.py` in your project directory.
 2. Export `Note sync change log` from the `Data Integrity` folder, creating file `NotesAllChanges.XLS`.
-3. Open `NotesAllChanges.XLS` and double check all information is correct and no data entries have been made.
+3. Open `NotesAllChanges.XLS` and double check all information is correct and no data entries erross have been made.
    1. Make any changes as needed, this file will eventually be parsed and imported back into Raiser's Edge.
 5. Ensure that your input file, `NotesAllChanges.XLS`, is in the same directory as the script.
 6. Run the script:
