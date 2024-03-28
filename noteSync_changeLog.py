@@ -229,7 +229,7 @@ today = datetime.today().strftime('%Y-%m-%d')
 # Create directory name with today's date
 dir_name = f"Parish Updates {today}"
 # Input filename containing the original data
-filename = 'noteSync_changeLog.XLS'
+filename = 'SyncNotes.XLS'
 # Read data from Excel file into a DataFrame
 df = pd.read_excel(filename)
 # Apply remapping function to each row of the DataFrame
