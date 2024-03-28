@@ -20,7 +20,7 @@ This repository contains a script for processing notes from an older Excel file 
      * A note must only be left when all fields on a record have been screened for accuracy and meets data entry standards
 * The query in folder `Database Cleanup` has the query `Notes Sync Change Log`
    * This query criteria `(Note Type =  Sync ) AND (Title, Description, Notes = Blank )`
-* Export in folder `Database Cleanup` called `Notes Sync Change Log`
+* Export in folder `Data Integrity` called `Notes Sync Change Log`
    * This export has the following headers:
 
    | CnAls_1_01_Alias | CnAls_1_01_Alias_Type | LastChangedBy | DateLastChange | ConsID | IsInactive | Deceased | DeceasedDate | Gender | Titl1 | FirstName | MiddleName | LastName | Suffix | MrtlStat | MaidenName | Bday | SRConsID | SRInactive | SRDeceased |    SRDeceasedDate | SRGender | SRTitl1 | SRFirstName | SRMiddleName | SRLastName | SRSuffix | SRMrtlStat | SRMaidenName |
