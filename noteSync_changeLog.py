@@ -167,12 +167,27 @@ def creating_Import_files(df):
         'CnAls_1_05_Alias', 'CnAls_1_05_Alias_Type',
         'CnAls_1_06_Alias', 'CnAls_1_06_Alias_Type',
         'LastChangedBy', 'DateLastChange', 'PrimAddText', 'PrimSalText','SRConsID', 'SRInactive', 'SRMrtlStat',
-        'CnNote_1_01_Description', 'ConsCode_Long', 'ConsCode_Short', 'ConsCode_StartDate', 'ConsCode_EndDate',
+        'ConsCode_Long', 'ConsCode_Short', 'ConsCode_StartDate', 'ConsCode_EndDate',
         'ConsCode_Long_1', 'ConsCode_Short_1', 'ConsCode_StartDate_1', 'ConsCode_EndDate_1',  'ConsCode_Long_2',
         'ConsCode_Short_2', 'ConsCode_StartDate_2', 'ConsCode_EndDate_2', 'LastFundIDDesc', 'LastFundID',
+        # Drop all note columns except CnNote_1_01_Title, CnNote_1_01_Import_ID, CnNote_1_01_Actual_Notes, CnNote_1_01_Description
+        'CnNote_1_02_Type', 'CnNote_1_02_Title', 'CnNote_1_02_Description', 'CnNote_1_02_Import_ID',
+        'CnNote_1_03_Type', 'CnNote_1_03_Title', 'CnNote_1_03_Description', 'CnNote_1_03_Import_ID',
+        'CnNote_1_04_Type', 'CnNote_1_04_Title', 'CnNote_1_04_Description', 'CnNote_1_04_Import_ID',
+        'CnNote_1_05_Type', 'CnNote_1_05_Title', 'CnNote_1_05_Description', 'CnNote_1_05_Import_ID',
+        'CnNote_1_06_Type', 'CnNote_1_06_Title', 'CnNote_1_06_Description', 'CnNote_1_06_Import_ID',
+        'CnNote_1_07_Type', 'CnNote_1_07_Title', 'CnNote_1_07_Description', 'CnNote_1_07_Import_ID',
+        'CnNote_1_08_Type', 'CnNote_1_08_Title', 'CnNote_1_08_Description', 'CnNote_1_08_Import_ID',
+        'CnNote_1_09_Type', 'CnNote_1_09_Title', 'CnNote_1_09_Description', 'CnNote_1_09_Import_ID',
+        'CnNote_1_10_Type', 'CnNote_1_10_Title', 'CnNote_1_10_Description', 'CnNote_1_10_Import_ID',
     ]
     # Drop specified columns from the DataFrame
     reimport_df.drop(columns=columns_to_drop, inplace=True, errors='ignore')
+    
+    # Clean up CnNote_1_01_Actual_Notes column - remove ' 00:00:00' from values
+    if 'CnNote_1_01_Actual_Notes' in reimport_df.columns:
+        reimport_df['CnNote_1_01_Actual_Notes'] = reimport_df['CnNote_1_01_Actual_Notes'].astype(str).str.replace(' 00:00:00', '', regex=False)
+    
     # Output a new csv called 'NotesAllChanges_ImportReady.csv'
     reimport_df.to_csv('NotesAllChanges_ImportReady.csv', index=False)
 
@@ -243,7 +258,8 @@ columns_to_concatenate = [
         'SRTitl1', 'SRFirstName', 'SRLastName', 'SRSuffix', 'SRMrtlStat', 'SRMaidenName', 'AddrLines',
         'AddrCity', 'AddrState', 'AddrZIP'
     ]
-# Cons code groups with their criteria
+# Cons code groups with their criteriaCnNote_1_01_Type
+
 conscode_groups = [
             ('ConsCode_Short', 'ConsCode_EndDate'),
             ('ConsCode_Short_1', 'ConsCode_EndDate_1'),
