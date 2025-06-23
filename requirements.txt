@@ -1,7 +1,3 @@
 pandas
-fuzzywuzzy
-python-Levenshtein
-xlrd
 openpyxl
-os
-datetime
+xlrd
